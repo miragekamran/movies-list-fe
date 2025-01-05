@@ -1,12 +1,17 @@
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import Movies from "./components/Movies";
 import "./App.css";
+import NavBar from "./components/NavBar";
 
 function App() {
     return (
-        <div className="App">
-            <h1 className="Header">Movies Gallery</h1>
-            <Movies />
-        </div>
+        <Router>
+            <NavBar />
+            <div className="App">
+                <Movies />
+            </div>
+        </Router>
     );
 }
 
