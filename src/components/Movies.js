@@ -7,7 +7,7 @@ function Movies() {
 
     useEffect(() => {
         axios
-            .get("https://movies-list.herokuapp.com/api/movies")
+            .get("https://movie-list-be-4xuw.onrender.com/api/movies")
             .then((response) => {
                 setMovies(response.data);
             })
@@ -22,7 +22,7 @@ function Movies() {
 
     const handleDelete = (id) => {
         axios
-            .delete(`https://movies-list.herokuapp.com/api/movies/${id}`)
+            .delete(`https://movie-list-be-4xuw.onrender.com/api/movies/${id}`)
             .then((response) => {
                 console.log(response);
                 setMovies(movies.filter((movie) => movie.movie_id !== id));
@@ -36,7 +36,7 @@ function Movies() {
     const handleUpdate = (id, updatedMovie) => {
         axios
             .put(
-                `https://movies-list.herokuapp.com/api/movies/${id}`,
+                `https://movie-list-be-4xuw.onrender.com/api/movies/${id}`,
                 updatedMovie
             )
             .then((response) => {

@@ -25,7 +25,10 @@ function AddMovie({ onAddMovie }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-            .post("https://movies-list.herokuapp.com/api/movies", formData)
+            .post(
+                "https://movie-list-be-4xuw.onrender.com/api/movies",
+                formData
+            )
             .then((response) => {
                 onAddMovie(response.data);
                 console.log(response);
