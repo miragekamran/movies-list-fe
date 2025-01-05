@@ -26,7 +26,7 @@ function AddMovie({ onAddMovie }) {
         event.preventDefault();
         axios
             .post(
-                "https://movie-list-be-4xuw.onrender.com/api/movies",
+                "https://movie-list-be-p4od.onrender.com/api/movies",
                 formData
             )
             .then((response) => {
