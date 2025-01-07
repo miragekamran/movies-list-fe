@@ -29,7 +29,7 @@ export default function MovieList() {
     }); // Tracks the new movie details
 
     useEffect(() => {
-        axios("https://movie-list-be-p4od.onrender.com/api/movies")
+        axios("https://movie-list-be-1.onrender.com/api/movies")
             .then((response) => {
                 setMovies(response.data);
                 // Initialize visibility state for descriptions
@@ -51,7 +51,7 @@ export default function MovieList() {
 
     const handleDelete = (id) => {
         axios
-            .delete(`https://movie-list-be-p4od.onrender.com/api/movies/${id}`)
+            .delete(`https://movie-list-be-1.onrender.com/api/movies/${id}`)
             .then(() => {
                 setMovies(movies.filter((movie) => movie.movie_id !== id));
             })
@@ -61,7 +61,7 @@ export default function MovieList() {
     const handleUpdate = (id, updatedMovie) => {
         axios
             .put(
-                `https://movie-list-be-p4od.onrender.com/api/movies/${id}`,
+                `https://movie-list-be-1.onrender.com/api/movies/${id}`,
                 updatedMovie
             )
             .then((response) => {
@@ -98,10 +98,7 @@ export default function MovieList() {
 
     const handleAddMovie = () => {
         axios
-            .post(
-                "https://movie-list-be-p4od.onrender.com/api/movies",
-                newMovie
-            )
+            .post("https://movie-list-be-1.onrender.com/api/movies", newMovie)
             .then((response) => {
                 setMovies([...movies, response.data]);
                 setAddDialogOpen(false); // Close the dialog
